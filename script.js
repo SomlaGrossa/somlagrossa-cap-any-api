@@ -111,3 +111,8 @@ function verificarPremio() {
             <p style="text-align:center; font-size: 30px;"><font color="black";>Aquest número no és guanyador. Més sort la pròxima vegada.</font></p>
         </div></br>`;
 }
+ return { mensaje, premioTotal };
+}
+
+
+module.exports = verificarPremio;
