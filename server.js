@@ -11,14 +11,14 @@ const verificarPremio = require("./script");
 
 // Ruta de prueba
 app.get("/", (req, res) => {
-  res.send("API de la Grossa en funcionamiento 🚀");
+  res.send("API de SomlaGrossa en funcionament 🚀");
 });
 
 // Ruta para comprobar premios
 app.post("/comprovar", (req, res) => {
   const { numero, cantidad } = req.body;
   if (!numero || !cantidad) {
-    return res.status(400).json({ error: "Faltan datos" });
+    return res.status(400).json({ error: "Falten dades" });
   }
   const resultado = verificarPremio(numero, cantidad);
   res.json(resultado);
