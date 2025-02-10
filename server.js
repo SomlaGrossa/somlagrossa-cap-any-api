@@ -11,7 +11,7 @@ const verificarPremio = require("./script");
 
 // Ruta de prueba
 app.get("/", (req, res) => {
-  res.send("API de SomlaGrossa en funcionament 🚀");
+  res.send("API de SomlaGrossa en funcionament 🚀.");
 });
 
 // Ruta para comprobar premios
