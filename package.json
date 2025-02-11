@@ -1,7 +1,7 @@
 {
-  "name": "somlagrossa-cap-any-api",
+  "name": "comprovador-grossa",
   "version": "1.0.0",
-  "description": "API para comprobar los números de la Grossa de cap d'any",
+  "description": "API per a comprovar els premis de la Grossa de Cap d'Any",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
