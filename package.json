@@ -1,5 +1,5 @@
 {
-  "name": "comprovador-grossa",
+  "name": "comprovador",
   "version": "1.0.0",
   "description": "API per a comprovar els premis de la Grossa de Cap d'Any",
   "main": "server.js",
