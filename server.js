@@ -32,7 +32,7 @@ const premios = [
 ];
 
 // Ruta para verificar el premio
-app.post("/comprovador/:numero", (req, res) => {
+app.post("/", (req, res) => {
     const { numero, cantidad } = req.body;
 
     if (!numero || numero.length !== 5) {
@@ -88,7 +88,7 @@ app.post("/comprovador/:numero", (req, res) => {
     }
 });
 
-app.get("/", (req, res) => {
+app.get("/comprovador/:numero", (req, res) => {
     res.send("La API está funcionando correctamente");
 });
 
