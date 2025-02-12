@@ -50,7 +50,7 @@ function verificarPremio(numero, cantidad) {
 }
 
 // Ruta POST para comprobar un número
-app.post("/comprovar", (req, res) => {
+app.post("/comprovador", (req, res) => {
     const { numero, cantidad } = req.body;
 
     if (!numero || numero.length !== 5) {
