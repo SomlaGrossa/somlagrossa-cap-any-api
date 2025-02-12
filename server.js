@@ -22,40 +22,31 @@ const premios = [
 // Función para verificar el premio
 function verificarPremio(numero, cantidad) {
     let premioTotal = 0;
-    let detalles = [];
 
     premios.forEach(premio => {
         let mejorPremio = 0;
-        let descripcion = "";
 
-        if (numero == premio.numero) {
+        if (parseInt(numero) === premio.numero) {
             mejorPremio = premio.valor;
-            descripcion = `Has ganado ${premio.valor}€ (${premio.tipo})`;
-        } else if (numero == premio.numero - 1 || numero == premio.numero + 1) {
+        } else if (parseInt(numero) === premio.numero - 1 || parseInt(numero) === premio.numero + 1) {
             mejorPremio = premio.premioAdyacente;
-            descripcion = `Has ganado ${premio.premioAdyacente}€ (Número adyacente)`;
         } else if (numero.slice(-4) === premio.numero.toString().slice(-4)) {
             mejorPremio = premio.premio4Cifras;
-            descripcion = `Has ganado ${premio.premio4Cifras}€ (Coincidencia de 4 cifras)`;
         } else if (numero.slice(-3) === premio.numero.toString().slice(-3)) {
             mejorPremio = premio.premio3Cifras;
-            descripcion = `Has ganado ${premio.premio3Cifras}€ (Coincidencia de 3 cifras)`;
         } else if (numero.slice(-2) === premio.numero.toString().slice(-2)) {
             mejorPremio = premio.premio2Cifras;
-            descripcion = `Has ganado ${premio.premio2Cifras}€ (Coincidencia de 2 cifras)`;
         } else if (numero.slice(-1) === premio.numero.toString().slice(-1)) {
             mejorPremio = premio.premioUltimaCifra;
-            descripcion = `Has ganado ${premio.premioUltimaCifra}€ (Coincidencia de última cifra)`;
         }
 
         if (mejorPremio > 0) {
             premioTotal += mejorPremio;
-            detalles.push(descripcion);
         }
     });
 
     const premioFinal = (premioTotal * cantidad) / 10;
-    return { premioTotal: premioFinal};
+    return { premioTotal: premioFinal };
 }
 
 // Ruta POST para comprobar un número
@@ -70,7 +61,7 @@ app.post("/comprovador", (req, res) => {
         return res.status(400).json({ error: "Si us plau, introdueix una quantitat jugada vàlida." });
     }
 
-    const resultado = verificarPremio(numero, cantidad, detalles);
+    const resultado = verificarPremio(numero, cantidad);
     res.json(resultado);
 });
 
@@ -78,4 +69,3 @@ app.post("/comprovador", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor SomlaGrossa corriendo en http://localhost:${PORT}`);
 });
-
