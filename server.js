@@ -32,7 +32,7 @@ const premios = [
 ];
 
 // Ruta para verificar el premio
-app.post("/", (req, res) => {
+app.post("/comprovador-grossa", (req, res) => {
     const { numero, cantidad } = req.body;
 
     if (!numero || numero.length !== 5) {
