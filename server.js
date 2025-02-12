@@ -55,7 +55,7 @@ function verificarPremio(numero, cantidad) {
     });
 
     const premioFinal = (premioTotal * cantidad) / 10;
-    return { premioTotal: premioFinal, detalles };
+    return { premioTotal: premioFinal};
 }
 
 // Ruta POST para comprobar un número
@@ -63,11 +63,11 @@ app.post("/comprovador", (req, res) => {
     const { numero, cantidad } = req.body;
 
     if (!numero || numero.length !== 5) {
-        return res.status(400).json({ error: "Número inválido, debe tener 5 cifras" });
+        return res.status(400).json({ error: "Si us plau, introdueix un número de 5 cifres." });
     }
 
     if (!cantidad || cantidad <= 0) {
-        return res.status(400).json({ error: "Cantidad inválida, debe ser mayor a 0" });
+        return res.status(400).json({ error: "Si us plau, introdueix una quantitat jugada vàlida." });
     }
 
     const resultado = verificarPremio(numero, cantidad);
@@ -76,6 +76,6 @@ app.post("/comprovador", (req, res) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor SomlaGrossa corriendo en http://localhost:${PORT}`);
 });
 
