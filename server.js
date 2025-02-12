@@ -88,6 +88,10 @@ app.post("/", (req, res) => {
     }
 });
 
+app.get("/", (req, res) => {
+    res.send("La API está funcionando correctamente");
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor SomlaGrossa corriendo en http://localhost:${PORT}`);
