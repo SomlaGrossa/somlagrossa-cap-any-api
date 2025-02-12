@@ -70,7 +70,7 @@ app.post("/comprovador", (req, res) => {
         return res.status(400).json({ error: "Si us plau, introdueix una quantitat jugada vàlida." });
     }
 
-    const resultado = verificarPremio(numero, cantidad);
+    const resultado = verificarPremio(numero, cantidad, detalles);
     res.json(resultado);
 });
 
