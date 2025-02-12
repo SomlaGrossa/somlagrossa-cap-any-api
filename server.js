@@ -1,16 +1,3 @@
-// Números premiados de la Grossa de cap d'any 
-const numeroPremiadoPrimerPremio = 44748;
-const numeroPremiadoSegundoPremio = 81612;
-const numeroPremiadoTercerPremio = 96522;
-
-const numeroPremiadoCuartoPremio1 = 22724;
-const numeroPremiadoCuartoPremio2 = 83387;
-
-const numeroPremiadoQuintoPremio1 = 89479;
-const numeroPremiadoQuintoPremio2 = 42111;
-const numeroPremiadoQuintoPremio3 = 97342;
-
-
 const express = require("express");
 const cors = require("cors");
 
