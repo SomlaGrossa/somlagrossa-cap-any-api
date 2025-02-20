@@ -7,6 +7,11 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json()); // Para recibir JSON en el body
 
+// Ruta de prueba para verificar que el servidor responde en "/"
+app.get("/", (req, res) => {
+    res.send("¡Servidor funcionando en Koyeb!");
+});
+
 // Números premiados de la Grossa de cap d'any
 const premios = [
     { tipo: "Primer Premio", valor: 200000, numero: 44748, premioAdyacente: 2000, premio4Cifras: 1000, premio3Cifras: 250, premio2Cifras: 35, premioUltimaCifra: 10 },
