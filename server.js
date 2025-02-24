@@ -2,12 +2,17 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000; // Usa el puerto que Koyeb asigna
 
 app.use(cors());
-app.use(express.json()); // Para recibir JSON en el body
+app.use(express.json()); // Permite recibir JSON en el body
 
-// Números premiados de la Grossa de cap d'any
+// Ruta de prueba para verificar que el servidor funciona
+app.get("/", (req, res) => {
+    res.send("¡Servidor funcionando en Koyeb!");
+});
+
+// Números premiados de la Grossa de Cap d'Any
 const premios = [
     { tipo: "Primer Premio", valor: 200000, numero: 44748, premioAdyacente: 2000, premio4Cifras: 1000, premio3Cifras: 250, premio2Cifras: 35, premioUltimaCifra: 10 },
     { tipo: "Segundo Premio", valor: 65000, numero: 81612, premioAdyacente: 650, premio4Cifras: 300, premio3Cifras: 75, premio2Cifras: 25, premioUltimaCifra: 0 },
@@ -54,7 +59,7 @@ app.post("/comprovador", (req, res) => {
     const { numero, cantidad } = req.body;
 
     if (!numero || numero.length !== 5) {
-        return res.status(400).json({ error: "Si us plau, introdueix un número de 5 cifres." });
+        return res.status(400).json({ error: "Si us plau, introdueix un número de 5 xifres." });
     }
 
     if (!cantidad || cantidad <= 0) {
@@ -65,7 +70,7 @@ app.post("/comprovador", (req, res) => {
     res.json(resultado);
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
+// Iniciar servidor correctamente
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Servidor SomlaGrossa corriendo en http://localhost:${PORT}`);
 });
