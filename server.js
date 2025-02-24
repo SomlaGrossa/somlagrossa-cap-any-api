@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Usa el puerto que Koyeb asigna
+const PORT = process.env.PORT || 8000; // Usa el puerto que Koyeb asigna
 
 app.use(cors());
 app.use(express.json()); // Permite recibir JSON en el body
